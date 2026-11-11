@@ -1,0 +1,63 @@
+<main class="page" id="top">
+  <header class="masthead">
+    <a class="name" href="#top">John Matthew Robles<span>®</span></a>
+    <nav><a href="#projects">Projects</a><a href="#about">About</a><a href="mailto:jerobles@student.hau.edu.ph">Email</a></nav>
+  </header>
+
+  <section class="intro">
+    <p>Website developer & interface designer</p>
+    <p class="intro-right">Based in Angeles City, Philippines<br>Available for opportunities</p>
+  </section>
+
+  <section class="project-section" id="projects">
+    <div class="section-label"><span>Selected work</span><span>2024 — 2026</span></div>
+    <div class="projects">
+      @for (project of projects; track project.number; let i = $index) {
+        <a class="project" [href]="project.href" [attr.aria-label]="project.title">
+          <div class="preview" [class]="'preview preview-' + (i + 1)">
+            @if (i === 0) {
+              <div class="browser-frame"><div class="browser-top"><i></i><i></i><i></i><span>jmr.studio</span></div><div class="browser-body"><small>PERSONAL PORTFOLIO</small><strong>Ideas into<br>interfaces<span>.</span></strong><div class="browser-line"></div></div></div>
+            } @else if (i === 1) {
+              <div class="restaurant-preview"><small>DISCOVER SOMETHING GOOD</small><b>RESTAURANT<br>EXPLORER</b><span>SEARCH · FILTER · DISCOVER</span></div>
+            } @else {
+              <div class="floral-preview"><span>F</span><b>FLORES<br>DE AMOR</b><small>FLOWERS FOR EVERY MOMENT</small></div>
+            }
+          </div>
+          <div class="project-meta"><span class="project-title">{{ project.title }}</span><span class="project-year">{{ project.year }}</span></div>
+          <div class="project-submeta"><span>{{ project.type }}</span><span>↗</span></div>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-label"><span>About</span><span>A little introduction</span></div>
+    <div class="about-content">
+      <div class="bio-column">
+        <p class="bio">{{ profile }}</p>
+        <app-profile-card></app-profile-card>
+        <div class="interaction">
+          <button type="button" (click)="handleClick()">Click Me</button>
+          <span>You clicked the button {{ clickCount }} time(s).</span>
+        </div>
+      </div>
+      <div class="details">
+        <div><small>FOCUS</small><span>Web Development<br>UI / UX Design</span></div>
+        <div><small>LOCATION</small><span>Angeles City, Pampanga<br>Philippines</span></div>
+        <div><small>CONTACT</small><span>jerobles@student.hau.edu.ph<br>+63 969 999 9999</span></div>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="section-label"><span>Skills & tools</span><span>What I work with</span></div>
+      <div class="skills-list"><div><small>SKILLS</small><p class="skill-items">@for (skill of skills; track skill) { <span>{{ skill }}</span> }</p></div>
+        @for (group of proficiencies; track group.category) { <div><small>{{ group.category }}</small><p>{{ group.items.join(' · ') }}</p></div> }
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">John Matthew Robles<span>®</span></div>
+    <div class="footer-links"><a href="mailto:jerobles@student.hau.edu.ph">Email</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Back to top ↑</a></div>
+    <p>© {{ year }} — Designed & built by John Matthew Robles</p>
+  </footer>
+</main>
