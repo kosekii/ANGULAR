@@ -1,0 +1,13 @@
+:host { display:block; }
+.proficiency-section { margin-top:60px; }
+.section-label { display:flex; justify-content:space-between; padding:0 0 13px; border-bottom:1px solid #dcdcd5; font:10px 'DM Mono',monospace; color:#77786f; }
+table { width:100%; border-collapse:collapse; margin-top:12px; font:11px 'DM Sans',sans-serif; color:#55574f; }
+th, td { text-align:left; padding:12px 10px; border-bottom:1px solid #e5e5df; }
+th { font:10px 'DM Mono',monospace; color:#77786f; font-weight:400; }
+.footer-bottom { border-top:1px solid #e3e3dc; margin-top:45px; padding:22px 0 28px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.footer-name { font:500 15px 'DM Sans',sans-serif; letter-spacing:-.04em; color:#222; }
+.footer-name span { font:9px 'DM Mono'; vertical-align:top; margin-left:2px; }
+.footer-links { display:flex; justify-content:flex-end; gap:22px; }
+.footer-links a { font:10px 'DM Mono',monospace; color:#65665f; text-decoration:none; }
+.footer-bottom p { grid-column:1/-1; margin:12px 0 0; font:9px 'DM Mono'; color:#96978f; }
+@media(max-width:650px) { .footer-bottom { grid-template-columns:1fr; } .footer-links { justify-content:flex-start; flex-wrap:wrap; } .footer-bottom p { grid-column:auto; } }

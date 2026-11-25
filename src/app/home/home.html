@@ -1,0 +1,53 @@
+<main class="page" id="top">
+  <app-header
+    [fullName]="fullName"
+    [location]="location"
+    [email]="email"
+    [phone]="phone"
+    [profile]="profile">
+  </app-header>
+
+  <section class="project-section" id="projects">
+    <div class="section-label"><span>Selected Work</span><span>2024 — 2026</span></div>
+    <div class="projects">
+      @for (project of projects; track project.number; let i = $index) {
+        <a class="project" [href]="project.href" [attr.aria-label]="project.title">
+          <div class="preview" [class]="'preview preview-' + (i + 1)">
+            @if (i === 0) {
+              <div class="browser-frame"><div class="browser-top"><i></i><i></i><i></i><span>jmr.studio</span></div><div class="browser-body"><small>PERSONAL PORTFOLIO</small><strong>Ideas into<br>interfaces<span>.</span></strong><div class="browser-line"></div></div></div>
+            } @else if (i === 1) {
+              <div class="restaurant-preview"><small>DISCOVER SOMETHING GOOD</small><b>RESTAURANT<br>EXPLORER</b><span>SEARCH · FILTER · DISCOVER</span></div>
+            } @else {
+              <div class="floral-preview"><span>F</span><b>FLORES<br>DE AMOR</b><small>FLOWERS FOR EVERY MOMENT</small></div>
+            }
+          </div>
+          <div class="project-meta"><span class="project-title">{{ project.title }}</span><span class="project-year">{{ project.year }}</span></div>
+          <div class="project-submeta"><span>{{ project.type }}</span><span>↗</span></div>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-label"><span>About</span><span>A little introduction</span></div>
+    <div class="about-content">
+      <div class="bio-column">
+        <app-profile-card></app-profile-card>
+      </div>
+      <div class="details">
+        <div><small>FOCUS</small><span>Web Development<br>UI / UX Design</span></div>
+        <div><small>LOCATION</small><span>{{ location }}</span></div>
+        <div><small>CONTACT</small><span>{{ email }}<br>{{ phone }}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <app-skills [skills]="skills" (skillSelected)="onSkillSelected($event)"></app-skills>
+
+  <section class="interaction" aria-live="polite">
+    <div class="section-label"><span>Angular Interaction</span><span>Parent receives selected skill</span></div>
+    <p>{{ message }}</p>
+  </section>
+
+  <app-footer [fullName]="fullName" [proficiencies]="proficiencies"></app-footer>
+</main>

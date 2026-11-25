@@ -1,0 +1,23 @@
+<footer>
+  <section class="proficiency-section">
+    <div class="section-label"><span>Technical Proficiencies</span><span>Tools &amp; technologies</span></div>
+    <table>
+      <thead><tr><th>Tool / Technology</th><th>Proficiency Level</th></tr></thead>
+      <tbody>
+        @for (item of proficiencies(); track item.tool) {
+          <tr><td>{{ item.tool }}</td><td>{{ item.level }}</td></tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footer-bottom">
+    <div class="footer-name">{{ fullName() }}<span>®</span></div>
+    <div class="footer-links">
+      <a href="mailto:jerobles@student.hau.edu.ph">Email</a>
+      <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+    <p>© {{ year }} — Designed &amp; built by {{ fullName() }}</p>
+  </div>
+</footer>

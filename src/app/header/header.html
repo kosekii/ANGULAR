@@ -1,0 +1,25 @@
+<header>
+  <div class="masthead">
+    <a class="name" href="#top">{{ fullName() }}<span>®</span></a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a [href]="'mailto:' + email()">Email</a>
+    </nav>
+  </div>
+
+  <section class="intro">
+    <p>Website developer &amp; interface designer</p>
+    <p class="intro-right">Based in {{ location() }}<br>Available for opportunities</p>
+  </section>
+
+  <section class="profile-intro">
+    <div class="section-label"><span>Personal Profile</span><span>A little introduction</span></div>
+    <p>{{ profile() }}</p>
+    <div class="contact-details">
+      <span>{{ location() }}</span>
+      <a [href]="'mailto:' + email()">{{ email() }}</a>
+      <span>{{ phone() }}</span>
+    </div>
+  </section>
+</header>

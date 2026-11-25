@@ -1,0 +1,7 @@
+:host { display:block; }
+.skills-section { border-top:1px solid #e3e3dc; padding-top:15px; }
+.section-label { display:flex; justify-content:space-between; padding:0 0 13px; border-bottom:1px solid #dcdcd5; font:10px 'DM Mono',monospace; color:#77786f; }
+.skill-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding-top:18px; }
+.skill-list button { text-align:left; border:1px solid #deded8; background:transparent; padding:12px 14px; color:#55574f; font:11px 'DM Sans',sans-serif; cursor:pointer; transition:background .18s ease,border-color .18s ease; }
+.skill-list button:hover { background:#eeeee8; border-color:#aeb0a4; }
+@media(max-width:600px) { .skill-list { grid-template-columns:1fr; } }
